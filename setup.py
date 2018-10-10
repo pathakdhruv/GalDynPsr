@@ -14,7 +14,7 @@ setuptools.setup(
     description="A practise package",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    #url="https://test.pypi.org/project/GalDynPsr/",
+    url="https://github.com/pathakdhruv/GalDynPsr",
     include_package_data=True,
     packages=setuptools.find_packages(),
     classifiers=[

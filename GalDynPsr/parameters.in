@@ -1,0 +1,11 @@
+Vs = 220.0 #km/s
+sigVs = 7.0 #km/s
+Rskpc = 8.0 #kpc
+sigRs = 0.17 #kpc
+b0reid14 = -0.2 #{km(s^-1)(kpc^-1),(dV/dR)}
+sigb0r = 0.4  #{km(s^-1)(kpc^-1),(dV/dR)}
+b0dt91 = 0.00 #{[-(Rs/V)*(dV/dR)]atR=Rs}
+sigb0dt = 0.03 #{[-(Rs/V)*(dV/dR)]atR=Rs}
+
+
+

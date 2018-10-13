@@ -6,14 +6,18 @@ Details on various dynamical effects and various models to estimate those are av
 
 Brief outline of usage of GalDynPsr is given below.
 
-# 1) Install GalDynPsr as pip3 install GalDynPsr or pip install GalDynPsr (assuming you have numpy, scipy, and galpy already installed and working)
+Questions and queries can be sent to Dhruv Pathak pathakdhruv9786 at gmail dot com
+
+# 1) After installing numpy, scipy, and galpy successfully, install GalDynPsr
+
+pip3 install GalDynPsr
 
 ### If wished, one can change the values of Rs (galactocentric cylindrical radius of the sun), Vs  (rotational speed of the sun) etc in parameters.in file that can be found inside the GalDynPsr (installed directory). 
 ## But remember that galpy also has these values defined in the file '$home/.galpyrc'. One can in principle change these values. 
-# However, the Milky Way potential in galpy was fitted with Rs = 8 kpc and vs = 220 in galpy
+# However, the Milky Way potential in galpy was fitted with Rs = 8.0 kpc and vs = 220.0 in galpy
 
 
-# 2) Import GalDynPsr
+# 2) Import GalDynPsr in your code as
 
 import GalDynPsr
 
@@ -75,7 +79,9 @@ Note that the Harris catalogue does not provide uncertainties in ldeg, bdeg and 
 GalDynPsr.modelX.Expl(readgc.ldeg,0.0,readgc.bdeg,0.0,readgc.dkpc,0.0) # the parallel component
 GalDynPsr.modelX.Exz(readgc.ldeg,0.0,readgc.bdeg,0.0,readgc.dkpc,0.0) # the perpendicular component
 
-# 8) Calculation of instrinsic period. Ordering of the arguments is important.
+# 8) models involving galpy does not return error. However, that can be done using simulation. See Example-2 below.
+
+# 9) Calculation of instrinsic period. Ordering of the arguments is important.
 
 
 First assign values of ldeg, sigl, bdeg, sigb, dkpc, sigd (meaning of the parameters are as usual) and calculate the excess terms as usual:
@@ -186,7 +192,7 @@ sigmaExcessSh = GalDynPsr.Shk.errShk(dkpc, sigd, mu_alpha, sigmua, mu_delta, sig
 
 
 
-### Example 1.1 ###
+### Example-1.1 ###
 
 ### Model A (can propagate error)######
 
@@ -206,7 +212,7 @@ totalA = Apl + Az
 SigmatotalA = math.sqrt(Aplsigma*Aplsigma+Azsigma*Azsigma) # assuming no correlation between excepp_pl and excess_z
 
 
-### Example 1.2 ###
+### Example-1.2 ###
 
 ### Model B (can propagate error)######
 
@@ -227,7 +233,7 @@ SigmatotalB = math.sqrt(Bplsigma*Bplsigma+Bzsigma*Bzsigma) # assuming no correla
 
 
 
-### Example 1.3 ###
+### Example-1.3 ###
 
 ### Model C (can propagate error)######
 
@@ -247,7 +253,7 @@ totalC = Cpl + Cz
 SigmatotalC = math.sqrt(Cplsigma*Cplsigma+Czsigma*Czsigma) # assuming no correlation between excepp_pl and excess_z
 
 
-### Example 1.4 ###
+### Example-1.4 ###
 
 ### Model D (can propagate error)######
 
@@ -268,7 +274,7 @@ SigmatotalD = math.sqrt(Dplsigma*Dplsigma+Dzsigma*Dzsigma) # assuming no correla
 
 
 
-### Example 1.5 ###
+### Example-1.5 ###
 
 ############  Model Ea (error only in parallel component)   ###############
 
@@ -282,7 +288,7 @@ Eaz = GalDynPsr.modelEa.Exz(ldeg, sigl, bdeg, sigb, dkpc, sigd) #calculates the 
 totalEa = Eapl+Eaz
 
 
-### Example 1.6 ###
+### Example-1.6 ###
 
 ############  Model Eb (error only in parallel component)   ###############
 
@@ -296,7 +302,7 @@ Ebz = GalDynPsr.modelEb.Exz(ldeg, sigl, bdeg, sigb, dkpc, sigd) #calculates the 
 totalEb = Ebpl+Ebz
 
 
-### Example 1.7 ###
+### Example-1.7 ###
 
 ############  Model Fa (error only in parallel component)   ###############
 
@@ -312,7 +318,7 @@ totalFa = Fapl+Faz
 
 
 
-### Example 1.8 ###
+### Example-1.8 ###
 
 ############  Model Fb (error only in parallel component)   ###############
 
@@ -326,7 +332,7 @@ Fbz = GalDynPsr.modelFb.Exz(ldeg, sigl, bdeg, sigb, dkpc, sigd) #calculates the 
 totalFb = Fbpl+Fbz
 
 
-### Example 1.9 ###
+### Example-1.9 ###
 
 ############  Model Ga (error in perpendicular component)   ###############
 
@@ -340,7 +346,7 @@ SigmaGaz = GalDynPsr.modelGa.Errz(ldeg, sigl, bdeg, sigb, dkpc, sigd) #calculate
 totalGa = Gapl+Gaz
 
 
-### Example 1.10 ###
+### Example-1.10 ###
 
 ############  Model Gb (error in perpendicular component)  ###############
 
@@ -356,7 +362,7 @@ totalGb = Gbpl+Gbz
 
 
 
-### Example 1.11 ###
+### Example-1.11 ###
 
 ############  Model Ha (error in perpendicular component)   ###############
 
@@ -371,7 +377,7 @@ totalHa = Hapl+Haz
 
 
 
-### Example 1.12 ###
+### Example-1.12 ###
 
 ############  Model Hb (error in perpendicular component)   ###############
 
@@ -387,7 +393,7 @@ totalHb = Hbpl+Hbz
 
 
 
-### Example 1.13 ###
+### Example-1.13 ###
 
 ############  Model Ia (error in perpendicular component)  ###############
 
@@ -402,7 +408,7 @@ totalIa = Iapl+Iaz
 
 
 
-### Example 1.14 ###
+### Example-1.14 ###
 
 ############  Model Ib (error in perpendicular component)   ###############
 
@@ -417,7 +423,7 @@ totalIb = Ibpl+Ibz
 
 
 
-### Example 1.15 ###
+### Example-1.15 ###
 
 ############  Model Ja (error in perpendicular component)   ###############
 
@@ -431,7 +437,7 @@ SigmaJaz = GalDynPsr.modelJa.Errz(ldeg, sigl, bdeg, sigb, dkpc, sigd) #calculate
 totalJa = Japl+Jaz
 
 
-### Example 1.16 ###
+### Example-1.16 ###
 
 ############  Model Jb (error in perpendicular component)  ###############
 
@@ -446,7 +452,7 @@ totalJb = Jbpl+Jbz
 
 
 
-### Example 1.17 ###
+### Example-1.17 ###
 
 ############  Model Ka (full galpy, no error)  ###############
 
@@ -459,7 +465,7 @@ totalKa = Kapl+Kaz
 
 
 
-### Example 1.18 ###
+### Example-1.18 ###
 
 ############  Model Kb (full galpy, no error)   ###############
 
@@ -473,8 +479,7 @@ totalKb = Kbpl+Kbz
 
 
 
-### Example 1.19 ###
-
+### Example-1.19 ###
 ############  Model La (full galpy, no error)   ###############
 
 
@@ -487,8 +492,7 @@ totalLa = Lapl+Laz
 
 
 
-### Example 1.20 ###
-
+### Example-1.20 ###
 ############  Model Lb (full galpy, no error)   ###############
 
 
@@ -500,17 +504,76 @@ Lbz = GalDynPsr.modelLa.Exz(ldeg, sigl, bdeg, sigb, dkpc, sigd) #calculates the 
 totalLb = Lbpl+Lbz
 
 
+### Example-2  error estimation using  Model La (full galpy, no error)  ###
+
+import numpy as np
+import statistics as stat
+from astropy import units as u
+from astropy.coordinates import SkyCoord
+import GalDynPsr
+
+
+
+Number=50000 # number of instances to simulate
+
+
+mul, sigmal =   # define mean and standard deviation of l_degree
+
+mub, sigmab =    # define mean and standard deviation of b_degree
+
+mud, sigmad =     # define mean and standard deviation of d_kpc
+
+# now simulate 'Number' instances of l, b and d
+
+lsim = np.random.normal(mul, sigmal, Number)
+
+bsim = np.random.normal(mub, sigmab, Number)
+
+dsim = np.random.normal(mud, sigmad, Number)
+
+# declare arrays for excess_parallel, excess_z and excess_total
+
+Lapl = []
+Laz = []
+totalLa = []
+
+# now run GalDynPsr for 'Number' times
+
+count = 0
+while (count < Number):   
+
+# randomly select l, b, d from the simulated values 
+
+  x=np.random.random_integers(low=1, high=Number-1, size=3)
+ 
+ 
+  l=lsim[x[0]]
+  b=bsim[x[1]]
+  d=dsim[x[2]]
+  
+# for each value of l, b, d, calculate excess_parallel, excess_z and excess_total
+
+  Lapl.append(GalDynPsr.modelLa.Expl(l, sigmal, b, sigmab, d, sigmad))
+  Laz.append(GalDynPsr.modelLa.Exz(l, sigmal, b, sigmab, d, sigmad))
+
+  totalLa=np.add(Lapl,Laz)
+
+  
+  count = count + 1
+
+# now calculate mean and standard deviation of excess_parallel, excess_z and excess_total
+
+print(stat.mean(Lapl), stat.stdev(Lapl), count)
+print(stat.mean(Laz), stat.stdev(Laz), count)
+print(stat.mean(totalLa), stat.stdev(totalLa), count)
+
+
 
 #############################
-
 ######### For a Globular Cluster Pulsar #############################
-
 #Check names of Globular Clusters from GC_Harris.txt and write the name of the cluster. We do not include errors in this case.
-
-### Example 2 ###
-
+### Example 3 ###
 #Getting Excess_pl for model A for the GC 47Tuc:-
-
 #GalDynPsr.ReadGC.gcinput("GC Name") finds the GC in the GC_Harris list and calculates the corresponding galactic coordinates and distance to the GC. Input the arguments to any model as:- (GalDynPsr.ReadGC.ldeg,0.,GalDynPsr.ReadGC.bdeg,0.,GalDynPsr.ReadGC.dkpc,0.)
 
 
@@ -556,7 +619,7 @@ Az = GalDynPsr.modelA.Exz(GalDynPsr.ReadGC.ldeg,0.,GalDynPsr.ReadGC.bdeg,0.,GalD
 
 
 
-### Example 3.1 ###
+### Example 4 ###
 
 # Say using La
 

@@ -26,8 +26,7 @@ def MWRfo(ldeg, sigl, bdeg, sigb, dkpc, sigd):
     rfsun = evaluateRforces(MWPotential2014, Rskpc/Rskpc,0.0/Rskpc)*bovy_conversion.force_in_kmsMyr(Vs,Rskpc)
     
     rf0 = rforce1*coslam + rfsun*math.cos(l) 
-    rf = rf0*conversion*math.cos(b) # s-1
-    
+    rf = rf0*conversion*math.cos(b) # s-1   
     return rf;
 
 

@@ -25,3 +25,5 @@ def Exz(ldeg, sigl, bdeg, sigb, dkpc, sigd):
 def Errz(ldeg, sigl, bdeg, sigb, dkpc, sigd):
    print ("Error calculation can not be done as this model uses galpy")
    return 0.0;
+
+

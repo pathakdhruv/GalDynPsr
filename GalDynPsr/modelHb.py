@@ -15,7 +15,7 @@ def Expl(ldeg, sigl, bdeg, sigb, dkpc, sigd):
 def Exz(ldeg, sigl, bdeg, sigb, dkpc, sigd):
    b = bdeg*par.degtorad
    zkpc = dkpc*math.sin(b)
-   exz = g(zkpc)*math.sin(b) #s^-1
+   exz = g(zkpc)*math.sin(b) #s^-1   
    return exz;
 
 def Errz(ldeg, sigl, bdeg, sigb, dkpc, sigd):
@@ -25,3 +25,5 @@ def Errz(ldeg, sigl, bdeg, sigb, dkpc, sigd):
 def Errpl(ldeg, sigl, bdeg, sigb, dkpc, sigd):
    print ("Error calculation can not be done as this model uses galpy")
    return 0.0;
+
+

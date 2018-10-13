@@ -540,11 +540,11 @@ totalLa = []
 # now run GalDynPsr for 'Number' times
 
 count = 0
-while (count < Number):   
+while (count < Number): 
 
 # randomly select l, b, d from the simulated values 
 
-  x=np.random.random_integers(low=1, high=Number-1, size=3)
+  x=np.random.random_integers(low=0, high=Number-1, size=3)
  
  
   l=lsim[x[0]]

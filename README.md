@@ -706,7 +706,7 @@ ErrPdotint =  GalDynPsr.pdotint.ErrPdotint(Ex_pl,errpl,Ex_z,errz,Ex_shk,errshk,P
 
 Datafiles:
 
-parameters.in: Input file contains values of different constants which are subject to change with improvements in measurements. User can change the values of constants if the need be.
+parameters.in: Input file contains values of different constants which are subject to change with improvements in measurements. User can change the values of constants if the need be. These constants are Vs, sigVs (error in Vs), Rskpc (Rs in kpc units), sigRs (error in Rskpc), b0reid14 (dv/dR), sigb0r (error in dv/dR), b0dt91 (slope parameter), sigb0dt (error in slope parameter).
 
 GC_Harris.txt: Names and Galactic coordinates of the Globular Clusters.
 
@@ -714,7 +714,7 @@ README.txt: Contents of this README.md file inside package along with code files
 
 Description of different codes:
 
-read_parameters.py: contains parameters (constants) used in the package
+read_parameters.py: Contains various constants used in the package as well as functions to calculate Rp(kpc) and z(kpc) and their corresponding errors.
 
 
 ExcessZ.py:  Calculates az/c, both Nice-Taylor (1995) expression as well as our fit of HF2004
